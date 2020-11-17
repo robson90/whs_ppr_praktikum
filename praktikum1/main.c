@@ -3,7 +3,14 @@
 #include <stdlib.h>
 #include <assert.h>
 
+/**
+ * Length of Ulam Array
+ */
 #define ULAM_ARRAY_LENGTH 1000
+
+/**
+ * Ulam Max is the Maximum int number devided by 3 and sum with 1
+ */
 #define ULAM_MAX INT_MAX / 3 + 1
 
 
@@ -27,11 +34,14 @@ void clearArray();
 
 void printAllUlamsInIntervall(int a, int b);
 
-int doesTheSeconArrayContainsTheFirstOneCompletely(int shouldBeContained[],
-                                                   int arrayToCheck[]);
-
-
+/**
+ * Array that contains the Ulam
+ */
 int ulamArray[ULAM_ARRAY_LENGTH];
+
+/**
+ * Array for all Ulams in a 2dimensional way
+ */
 int arrayForAllUlams[ULAM_ARRAY_LENGTH][ULAM_ARRAY_LENGTH];
 
 
