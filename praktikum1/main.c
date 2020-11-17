@@ -96,6 +96,7 @@ int ulam_multiples(int limit, int number)
 {
     int multiple_count = 1;
     int pred = ulam_max(limit);
+    int curr = 0;
 
     do
     {
@@ -104,7 +105,7 @@ int ulam_multiples(int limit, int number)
             return limit;
         }
         limit = limit - 1;
-        int curr = ulam_max(limit);
+        curr = ulam_max(limit);
 
         if (pred == curr)
         {
