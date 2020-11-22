@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <assert.h>
-#include <stdlib.h>
 #include <math.h>
 
 /**
@@ -36,18 +35,18 @@ int main()
     assert(areBothNumbersEvenOrOdd(3, 2) == 0);
     assert(areBothNumbersEvenOrOdd(2, 3) == 0);
 
-    double matrixCounted[MAX_SIZE][MAX_SIZE]
+    /*double matrixCounted[MAX_SIZE][MAX_SIZE]
             = {{1.0, 2.0, 3.0},
                {4.0, 5.0, 6.0},
                {7.0, 8.0, 9.0}};
-    /*shiftLastMatrixTotop(matrixCounted, 3);
+    shiftLastMatrixTotop(matrixCounted, 3);
     print_matrix(matrixCounted, 3);
     shiftFirstMatrixToBottom(matrixCounted, 3);
     print_matrix(matrixCounted, 3);*/
 
 
     double matrixOne[MAX_SIZE][MAX_SIZE]
-            = {1.0};
+            = {{1.0}};
     assert(get_determinant(matrixOne, 1) == 1.0);
     double matrixTwo[MAX_SIZE][MAX_SIZE]
             = {{1.0, 1.0},
@@ -254,17 +253,6 @@ void print_matrix(double matrix[MAX_SIZE][MAX_SIZE], int size)
         printf("\n");
     }
     printf("\n");
-}
-
-void clealArray(double matrix[MAX_SIZE][MAX_SIZE])
-{
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
-        for (int j = 0; j < MAX_SIZE; ++j)
-        {
-            matrix[i][j] = 0.0;
-        }
-    }
 }
 
 /**
