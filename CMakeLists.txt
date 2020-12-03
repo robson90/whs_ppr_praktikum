@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 89)
 
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
 
-add_executable(ppr praktikum2/main.c)
+add_executable(ppr praktikum3/main.c)
