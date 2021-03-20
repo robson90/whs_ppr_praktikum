@@ -2,6 +2,8 @@
 #include <printf.h>
 #include <libc.h>
 
+#define ABORT { printf("Programmabbruch\n"); exit(-1); }
+
 
 const char *byte_to_binary(int x)
 {
@@ -88,7 +90,9 @@ int main()
             printf("%d ", i);
         }
         printf("\n");
+
     }
 
+    ABORT
     return -1;
 }
