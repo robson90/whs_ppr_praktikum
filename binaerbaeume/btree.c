@@ -57,12 +57,14 @@ BTREE *btree_merge(BTREE *left, BTREE *right, void *data)
 
 void copy_preorder(BTREE_NODE *nodeToCopy, BTREE_NODE *newNode)
 {
-    if (nodeToCopy->leftNode != NULL) {
+    if (nodeToCopy->leftNode != NULL)
+    {
         BTREE_NODE *newLeftNode = btreenode_new(nodeToCopy->leftNode->value);
         btreenode_set_left(newNode, newLeftNode);
         copy_preorder(nodeToCopy->leftNode, newLeftNode);
     }
-    if (nodeToCopy->rightNode != NULL) {
+    if (nodeToCopy->rightNode != NULL)
+    {
         BTREE_NODE *newRightNode = btreenode_new(nodeToCopy->rightNode->value);
         btreenode_set_right(newNode, newRightNode);
         copy_preorder(nodeToCopy->rightNode, newRightNode);
@@ -117,3 +119,7 @@ void btree_destroy(BTREE **tree, bool destroy_data)
     delete_in_preorder((*tree)->firstNode, destroy_data);
 }
 
+bool btree_equals(BTREE *tree1, BTREE *tree2)
+{
+    return btreenode_equals(tree1->firstNode, tree2->firstNode);
+}
