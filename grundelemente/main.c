@@ -19,6 +19,26 @@ const char *byte_to_binary(int x)
     return b;
 }
 
+void tausch(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void flupp(unsigned char byte)
+{
+    unsigned char mask;
+
+    for (mask = 0x80u; mask > 0; mask >>= 1)
+    {
+        printf("%s \n", byte_to_binary(mask));
+        printf("%d \n", ((byte & mask) == 0) ? 0 : 1);
+    }
+    printf("\n");
+}
+
 /**
  * Main Function that calls all necessary methods for praktikum 3
  * @return -1 when done with the operations
@@ -67,10 +87,18 @@ int main()
             printf("else\n");
         switch (1 - 1)
         {
-            case 1: printf("1\n"); break;
-            case 2: printf("2\n"); break;
-            case 3: printf("3\n"); break;
-            default: printf("default\n"); break;
+            case 1:
+                printf("1\n");
+                break;
+            case 2:
+                printf("2\n");
+                break;
+            case 3:
+                printf("3\n");
+                break;
+            default:
+                printf("default\n");
+                break;
         }
     }
     {
@@ -83,7 +111,7 @@ int main()
         do
         {
             printf("%d ", count--);
-        }while (count >= 0);
+        } while (count >= 0);
         printf("\n");
         for (int i = 0; i < 5; ++i)
         {
@@ -92,6 +120,12 @@ int main()
         printf("\n");
 
     }
+
+
+    int i = 0;
+    printf("%d \n", i);
+    printf("%d \n", '-');
+
 
     ABORT
     return -1;
